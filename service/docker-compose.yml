@@ -2,7 +2,7 @@ version: "3"
 services:
   web:
     # replace username/repo:tag with your name and image details
-    image: dmitriprilepski/get-started:part1
+    image: friendlyhello:latest
     deploy:
       replicas: 1
       resources:
@@ -11,11 +11,11 @@ services:
           memory: 50M
       restart_policy:
         condition: on-failure
-    command: ["service1", "80"]
+    command: ["servicename.txt", "80"]
     volumes:
       - services:/mnt
     ports:
-      - "80:80"
+      - "4000:80"
     networks:
       - webnet
 networks:
